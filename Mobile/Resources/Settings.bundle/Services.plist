@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Bookmarking</string>
+			<key>Key</key>
+			<string>CQBookmarkingService</string>
+			<key>Values</key>
+			<array>
+				<string></string>
+				<string>CQBookmarkingServiceDelicious</string>
+				<string>CQBookmarkingServiceInstapaper</string>
+				<string>CQBookmarkingServicePinboard</string>
+				<string>CQBookmarkingServicePocket</string>
+				<string>CQBookmarkingServiceSafariReadingList</string>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>None</string>
+				<string>Delicious</string>
+				<string>Instapaper</string>
+				<string>Pinboard</string>
+				<string>Pocket</string>
+				<string>Safari Reading List</string>
+			</array>
+			<key>DefaultValue</key>
+			<string>CQBookmarkingServiceSafariReadingList</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>@mentions</string>
+			<key>Key</key>
+			<string>CQMentionLinkService</string>
+			<key>Values</key>
+			<array>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>None</string>
+				<string>Twitter</string>
+				<string>App.net</string>
+			</array>
+			<key>DefaultValue</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+</dict>
+</plist>

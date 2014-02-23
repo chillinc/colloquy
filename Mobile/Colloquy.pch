@@ -1,0 +1,40 @@
+#define ENABLE(FEATURE) (defined(ENABLE_##FEATURE) && ENABLE_##FEATURE)
+#define SYSTEM(NAME) (defined(SYSTEM_##NAME) && SYSTEM_##NAME)
+
+#define LIKELY(x) __builtin_expect((x) ? 1 : 0, 1)
+#define UNLIKELY(x) __builtin_expect((x) ? 1 : 0, 0)
+
+#define RKL_PREPEND_TO_METHODS cq_
+
+#define SYSTEM_IOS 1
+
+#if TARGET_IPHONE_SIMULATOR
+#define SYSTEM_IOS_SIMULATOR 1
+#endif
+
+#ifdef __OBJC__
+
+#import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+#import <UIKit/UIKit.h>
+
+#import "NSObjectAdditions.h"
+#import "NSDataAdditions.h"
+#import "NSDictionaryAdditions.h"
+#import "NSFileManagerMoreAdditions.h"
+#import "NSScannerAdditions.h"
+#import "NSStringAdditions.h"
+
+#import "UIDeviceAdditions.h"
+#import "UIImageAdditions.h"
+#import "UINavigationControllerAdditions.h"
+#import "UITableViewAdditions.h"
+#import "UITableViewCellAdditions.h"
+#import "UIViewControllerAdditions.h"
+
+#import "CQSettingsController.h"
+
+#endif
+
+#import "MVUtilities.h"
+#import <tgmath.h>

@@ -1,0 +1,12 @@
+#import "Basic.pch"
+
+#ifdef __OBJC__
+
+#import <WebKit/WebKit.h>
+#import <AddressBook/AddressBook.h>
+#import <AGRegex/AGRegex.h>
+#import <ChatCore/ChatCore.h>
+
+#endif
+
+#include <sys/xattr.h>
