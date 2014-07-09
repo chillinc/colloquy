@@ -34,11 +34,13 @@
 //#define JVWatchedUserWHOISDelay 300.
 #define JVWatchedUserISONDelay 60.
 #define JVEndCapabilityTimeoutDelay 45.
-#define JVMaximumCommandLength 510
+//dlg 2048-2 per https://github.com/chillinc/tappy-issues/issues/281
+#define JVMaximumCommandLength 2046
 #define JVMaximumISONCommandLength JVMaximumCommandLength
 #define JVMaximumWatchCommandLength JVMaximumCommandLength
 #define JVMaximumMembersForWhoRequest 40
 #define JVFirstViableTimestamp 631138520
+//??? NSUTF8StringEncoding - dlg:
 #define JVFallbackEncoding NSISOLatin1StringEncoding
 
 static const NSStringEncoding supportedEncodings[] = {
@@ -1796,6 +1798,7 @@ end:
 
 	[self _pruneKnownUsers];
 
+/* Temporarily disable for chattiness -- dlg
 #if !ENABLE(BOUNCER_MODE)
 	@synchronized( _joinedRooms ) {
 		for( MVChatRoom *room in _joinedRooms )
@@ -1803,6 +1806,7 @@ end:
 				[self sendRawMessageWithFormat:@"WHO %@", [room name]];
 	}
 #endif
+*/
 
 	[self performSelector:@selector( _periodicEvents ) withObject:nil afterDelay:JVPeriodicEventsInterval];
 }
@@ -3687,11 +3691,13 @@ end:
 
 			[[NSNotificationCenter defaultCenter] postNotificationOnMainThreadWithName:MVChatRoomJoinedNotification object:room];
 
+/* Turn off--lower chattiness--dlg
 #if !ENABLE(BOUNCER_MODE)
 			if( [[room memberUsers] count] <= JVMaximumMembersForWhoRequest )
 				[self sendRawMessage:[NSString stringWithFormat:@"WHO %@", [room name]]];
 			[self sendRawMessage:[NSString stringWithFormat:@"MODE %@ b", [room name]]];
 #endif
+*/
 		}
 	}
 }
